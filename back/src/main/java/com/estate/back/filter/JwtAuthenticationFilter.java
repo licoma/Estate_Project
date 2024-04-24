@@ -95,7 +95,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         boolean isBearer = authorization.startsWith("Bearer ");
         if (!isBearer) return null;
 
-        // Authorization 필드값에서 토큰을 추출
+        // Authorization 필드값에서 토큰 추출
         String token = authorization.substring(7);
         return token;
 

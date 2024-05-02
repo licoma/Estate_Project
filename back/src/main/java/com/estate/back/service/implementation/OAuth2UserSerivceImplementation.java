@@ -46,14 +46,14 @@ public class OAuth2UserSerivceImplementation extends DefaultOAuth2UserService {
         // }
 
         String id = getId(oAuth2User, oauthClientName);
-        // KAKAO_?
-        // NAVER_?
+        // KAKAO_3458613654
+        // NAVER_WrEPcLttOx
         String userId = oauthClientName + "_" + id.substring(0, 10);
 
         boolean isExistUser = userRepository.existsByUserId(userId);
         if (!isExistUser) {
-            // ?@kakao.com
-            // ?AU40s6lMLd7MeNKZhwqky6yFnOqtUH0II@naver.com
+            // 3458613654@kakao.com
+            // WrEPcLttOxAU40s6lMLd7MeNKZhwqky6yFnOqtUH0II@naver.com
             String email = id + "@" + oauthClientName.toLowerCase() + ".com";
             String password = passwordEncoder.encode(id);
 

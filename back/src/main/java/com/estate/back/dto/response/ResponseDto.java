@@ -43,6 +43,12 @@ public class ResponseDto {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseBody);
     }
 
+    public static ResponseEntity<ResponseDto> writtenComment() {
+        ResponseDto responseBody =
+            new ResponseDto(ResponseCode.WRITTEN_COMMENT, ResponseMessage.WRITTEN_COMMENT);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseBody);
+    }
+
     public static ResponseEntity<ResponseDto> signInFailed() {
         ResponseDto responseBody =
             new ResponseDto(ResponseCode.SIGN_IN_FAILED, ResponseMessage.SIGN_IN_FAILED);
@@ -53,6 +59,18 @@ public class ResponseDto {
         ResponseDto responseBody =
             new ResponseDto(ResponseCode.AUTHENTICATION_FAILED, ResponseMessage.AUTHENTICATION_FAILED);
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(responseBody);
+    }
+
+    public static ResponseEntity<ResponseDto> authorizationFailed() {
+        ResponseDto responseBody =
+            new ResponseDto(ResponseCode.AUTHORIZATION_FAILED, ResponseMessage.AUTHORIZATION_FAILED);
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(responseBody);
+    }
+
+    public static ResponseEntity<ResponseDto> notFound() {
+        ResponseDto responseBody =
+            new ResponseDto(ResponseCode.NOT_FOUND, ResponseMessage.NOT_FOUND);
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(responseBody);
     }
 
     public static ResponseEntity<ResponseDto> tokenCreationFailed() {

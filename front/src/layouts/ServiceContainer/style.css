@@ -105,7 +105,7 @@
 }
 
 .side-navigation-icon.pie {
-    background-image: url('../../assets/image/pie-icon.png');
+    background-image: url('../../assets/image/chart-fill-icon.png');
 }
 
 .active > .side-navigation-icon.pie {
